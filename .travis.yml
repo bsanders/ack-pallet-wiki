@@ -1,0 +1,15 @@
+script:
+- |
+  git config user.name "Bill Sanders"
+  git config user.email billysanders@gmail.com
+  git remote remove origin
+  git remote add origin https://$GITHUB_API_KEY@github.com/bsanders/ack-pallet-wiki.git > /dev/null 2>&1
+  git remote add upstream https://$GITHUB_API_KEY@github.com/bsanders/ack-pallet.wiki.git > /dev/null 2>&1
+  git fetch origin
+  git fetch upstream
+  git merge upstream/master --no-edit
+  git push origin HEAD:master > /dev/null 2>&1
+  git push upstream HEAD:master > /dev/null 2>&1
+env:
+  matrix:
+    secure: eoEgikDrW+/YiLse/Ysqs12CTViGhs6WrO+gksinK9vWybfNHwLQjuzQHLM4/7mk2EkKpHfHXepW28ASYUBO9R/I7RDB55dVLt7Z7BSTd/MwqShxNBJULfBaeh8s27PPqTfozHRKnvLJBDPpifZCxMMg4w6/vfl5NQD1YvAzcJGSZxcqLu0i9nkplhpF6LZRqhqeaMSk7rPgN238bWjij8B60ZARXOognzDtkOgx/pT12YQ9cKgM89xOXcVK62fDlwCi6aOR9RYqpLWwDQLfd71Lx0OCvbdj+Jem/eYIsmsr2zXiFnlPRyo7hNnB7cdsDYNAG+uIQ4QcqEE2DTSv34AmAuPULLqJMNrGzzTetfl84FW22dH/xISUcub9SyjhDTmHexluf8y/0jfPNjx1i1315qaSag1+ha+VphS6AwyhwXWmDkiUCIYpQ5J4OS0FCHIVj6B7qRyek63VfJBkUhZLoa9xH2tir9VVNoaNkpX+/Fq27VG4IPcXNt2cyfS9FxRXlDANSKKhMfO7eJdM5rJNnFjOe2vLw2Ot604p9Ir8cWobeQvzGEd5CPuJGwOws7NPjIZ/vPt2BAahwTyIgeYaL8LGtqH9fA4CnpdyUixCtEH5Y3SUtlp/9KhK7qXjrxfNQsr3t68ZNCmfcjT5vUAmdfb2QU5mw7MASdiGT+c=
