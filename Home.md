@@ -1,1 +1,1 @@
-Welcome to the ack-pallet wiki!
+Welcome to the Ack Pallet wiki!
